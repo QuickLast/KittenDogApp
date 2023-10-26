@@ -23,6 +23,12 @@ namespace OsipovKirill320_KittenDogApp.Pages
         public AuthPage()
         {
             InitializeComponent();
+
+        }
+
+        private void SignInBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

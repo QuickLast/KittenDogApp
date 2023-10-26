@@ -62,11 +62,8 @@
            Grid.ColumnSpan="2" Foreground="#FFE0C300">Имя питомца
         </TextBlock>
         <ComboBox Name="PetNameCB" Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="4">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Name}"></TextBlock>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
+            <ComboBoxItem>Ра</ComboBoxItem>
+            <ComboBoxItem>Нуби</ComboBoxItem>
         </ComboBox>
         <TextBlock Grid.Row="10" Grid.Column="2" TextAlignment="Right" Margin="10 0"
            Grid.ColumnSpan="2" Foreground="#FFE0C300">Описание

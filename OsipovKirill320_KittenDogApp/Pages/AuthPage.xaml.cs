@@ -41,6 +41,7 @@ namespace OsipovKirill320_KittenDogApp.Pages
             }
             if (errCounter == 0)
             {
+                ErrorTBk.Text = "";
                 List<User> users = DBConn.KDEnt.User.ToList();
                 User currentUser = users.FirstOrDefault(x => x.Login == login && x.Password == password);
                 if (currentUser != null)

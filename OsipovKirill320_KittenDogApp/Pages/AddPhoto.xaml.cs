@@ -53,6 +53,36 @@ namespace OsipovKirill320_KittenDogApp.Pages
         {
             string name = NameTBx.Text.Trim();
             string description = DescriptionTBx.Text.Trim();
+            int forUser = 0;
+            if (PetNameCB.Text == "Ра")
+            {
+                forUser = 1;
+            }
+            else
+            {
+                forUser = 2;
+            }
+
+            int errCounter = 0;
+            if (name.Length == 0 || description.Length == 0 || PetNameCB.Text.Length == 0)
+            {
+                errCounter++;
+                ErrorTBk.Text = "Введите данные!";
+            }
+            if (errCounter == 0)
+            {
+                ErrorTBk.Text = "";
+
+                photo.Name = name;
+                photo.Description = description;
+                photo.ForUser = forUser;
+
+                DBConn.KDEnt.Photo.Add(photo);
+                DBConn.KDEnt.SaveChanges();
+
+                MessageBox.Show("Фотография успешно добавлена!");
+                NavigationService.Navigate(new MainPage(userToSend));
+            }
         }
     }
 }

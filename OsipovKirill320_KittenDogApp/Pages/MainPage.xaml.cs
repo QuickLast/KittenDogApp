@@ -51,7 +51,7 @@ namespace OsipovKirill320_KittenDogApp.Pages
             if (SortTBx.Text.Trim() == "")
                 PhotoLV.ItemsSource = DBConn.KDEnt.Photo.Where(i => i.ForUser == userID).ToList();
             else
-                PhotoLV.ItemsSource = DBConn.KDEnt.Photo.Where(i => i.Description.Contains(SortTBx.Text.Trim()) && i.ForUser == userID).ToList();
+                PhotoLV.ItemsSource = DBConn.KDEnt.Photo.Where(i => i.Description.StartsWith(SortTBx.Text.Trim()) && i.ForUser == userID).ToList();
         }
 
         private void SortCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -62,7 +62,7 @@ namespace OsipovKirill320_KittenDogApp.Pages
 
         private void AddPhoto_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new MainPage(userToSend));
+            NavigationService.Navigate(new AddPhoto(userToSend));
         }
     }
 }

@@ -73,7 +73,7 @@
                         <GridViewColumn Header="Photo">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding PhotoSource}"/>
+                                    <Image Source="{Binding PhotoSource}" Width="150" Height="150"></Image>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

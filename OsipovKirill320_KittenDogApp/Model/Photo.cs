@@ -18,5 +18,8 @@ namespace OsipovKirill320_KittenDogApp.Model
         public string Name { get; set; }
         public string Description { get; set; }
         public byte[] PhotoSource { get; set; }
+        public Nullable<int> ForUser { get; set; }
+    
+        public virtual User User { get; set; }
     }
 }

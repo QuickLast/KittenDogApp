@@ -45,7 +45,7 @@ namespace OsipovKirill320_KittenDogApp.Pages
                 User currentUser = users.FirstOrDefault(x => x.Login == login && x.Password == password);
                 if (currentUser != null)
                 {
-                    NavigationService.Navigate(new MainPage());
+                    NavigationService.Navigate(new MainPage(currentUser));
                 }
                 else
                 {

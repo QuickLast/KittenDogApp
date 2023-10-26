@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="KittenDogDBModel.Photo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KittenDogDBModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KittenDogDBModel.User" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="KittenDogDBModel.FK_Photo_User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

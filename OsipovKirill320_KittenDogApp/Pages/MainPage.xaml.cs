@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using OsipovKirill320_KittenDogApp.Model;
 
 namespace OsipovKirill320_KittenDogApp.Pages
 {
@@ -20,9 +21,18 @@ namespace OsipovKirill320_KittenDogApp.Pages
     /// </summary>
     public partial class MainPage : Page
     {
-        public MainPage()
+        public MainPage(User user)
         {
             InitializeComponent();
+            if (user.IDUser == 1)
+                PhotoLV.ItemsSource = DBConn.KDEnt.Photo.Where(i => i.ForUser == 1).ToList();
+            if (user.IDUser == 2)
+                PhotoLV.ItemsSource = DBConn.KDEnt.Photo.Where(i => i.ForUser == 2).ToList();
+        }
+
+        private void SortTBx_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

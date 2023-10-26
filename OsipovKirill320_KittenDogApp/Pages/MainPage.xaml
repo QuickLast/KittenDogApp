@@ -40,11 +40,19 @@
                    Margin="10 0">Поиск по описанию</TextBlock>
         <TextBox Name="SortTBx" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" Height="35"
                  VerticalAlignment="Center" TextChanged="SortTBx_TextChanged"></TextBox>
+        <TextBlock Grid.Column="5" Grid.Row="1" Grid.ColumnSpan="2" FontSize="13"
+           HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="#FFE0C300"
+           Margin="10 0">По имени</TextBlock>
         <ComboBox Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="3"
-                  Name="SortCB" Height="35">
-
+                  Name="SortCB" Height="35" SelectionChanged="SortCB_SelectionChanged"
+                  ItemsSource="{Binding Photos}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"></TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
-        <ListView Name="PhotoLV" Grid.Row="3" Grid.Column="1" Grid.RowSpan="6" Grid.ColumnSpan="9">
+        <ListView Name="PhotoLV" Grid.Row="3" Grid.Column="1" Grid.RowSpan="6" Grid.ColumnSpan="6">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
@@ -52,6 +60,13 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding IDPhoto}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Name">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -73,5 +88,14 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <TextBlock Name="WelcomeTBx" Grid.Column="8" Grid.Row="3" Grid.ColumnSpan="2"
+                   Foreground="#FFE0C300" FontSize="20" HorizontalAlignment="Center"
+                   VerticalAlignment="Center"></TextBlock>
+        <Image Name="profileImage"
+               Grid.Row="4" Grid.Column="8" Grid.ColumnSpan="2" Grid.RowSpan="3"
+               HorizontalAlignment="Center" VerticalAlignment="Center">
+        </Image>
+        <Button Name="AddPhoto" Content="Добавить фото"
+                Grid.Row="8" Grid.Column="8" Grid.ColumnSpan="2" Click="AddPhoto_Click"></Button>
     </Grid>
 </Page>

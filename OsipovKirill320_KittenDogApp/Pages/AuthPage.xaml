@@ -53,9 +53,9 @@
         <TextBlock Foreground="#FF11DC00" FontSize="20"
                Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="2" Margin="10 0"
                HorizontalAlignment="Right" VerticalAlignment="Center">Пароль</TextBlock>
-        <TextBox Name="PasswordTBx" FontSize="20"
+        <PasswordBox Name="PasswordTBx" FontSize="20"
              Grid.Row="6" Grid.Column="5" Grid.ColumnSpan="5"
-             VerticalAlignment="Center"></TextBox>
+             VerticalAlignment="Center"></PasswordBox>
         <Button Name="SignInBtn" Content="Войти"
                 Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="4" FontSize="17" Click="SignInBtn_Click"></Button>
         <TextBlock Name="ErrorTBk" Grid.Row="9" Grid.Column="5" 

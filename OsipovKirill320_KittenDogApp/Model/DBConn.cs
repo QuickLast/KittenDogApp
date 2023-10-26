@@ -8,6 +8,6 @@ namespace OsipovKirill320_KittenDogApp.Model
 {
     public class DBConn
     {
-        public KittenDogDBEntities KDEnt = new KittenDogDBEntities();
+        public static KittenDogDBEntities KDEnt = new KittenDogDBEntities();
     }
 }
